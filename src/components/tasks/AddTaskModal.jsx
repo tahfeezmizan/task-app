@@ -1,17 +1,21 @@
 import React from 'react';
 import Modal from '../ui/Modal';
 import { set, useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { addTask } from '../../redux/feature/tasks/taskSlices';
 
 export default function AddTaskModal({ isOpen, setIsOpen }) {
     const { register, handleSubmit, reset } = useForm();
+    const dispatch = useDispatch();
 
     const onCancel = () => {
         reset();
         setIsOpen(false);
     }
 
-    const onSubmit = (event) => {
-        console.log(event);
+    const onSubmit = (data) => {
+        console.log(data);
+        dispatch(addTask(data))
         onCancel();
     }
 
@@ -36,8 +40,8 @@ export default function AddTaskModal({ isOpen, setIsOpen }) {
                     <input type="date" id='date' className='w-full rounded' {...register("date")} />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label for="names">Assing to:</label>
-                    <select name="names"
+                    <label for="assingTo">Assing to:</label>
+                    <select name="assingTo"
                         id="assingTo"
                         className='w-full rounded'
                         {...register("assingTo")}>
@@ -49,19 +53,19 @@ export default function AddTaskModal({ isOpen, setIsOpen }) {
                     </select>
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label for="names">Priority</label>
-                    <select name="names"
+                    <label for="priority">Priority</label>
+                    <select name="priority"
                         id="priority"
                         className='w-full rounded'
                         {...register("priority")} >
-                        <option value="heigh">Heigh</option>
+                        <option value="high">High</option>
                         <option value="medium">medium</option>
                         <option value="low">Low</option>
                     </select>
                 </div>
 
                 <div className="flex items-center justify-center gap-5 pt-4">
-                    <button onClick={() => onCancel()} type="submit" className='px-6 py-2 border rounded-md bg-red-500 text-white font-medium'>Cancel</button>
+                    <button onClick={() => onCancel()} type="button" className='px-6 py-2 border rounded-md bg-red-500 text-white font-medium'>Cancel</button>
 
                     <button type="submit" className='px-6 py-2 border rounded-md bg-blue-500 text-white font-medium'>Submit</button>
                 </div>
