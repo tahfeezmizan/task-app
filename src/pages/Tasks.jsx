@@ -13,8 +13,6 @@ const Tasks = () => {
   const inProgressTask = task.filter(item => item.status === "in-progress")
   const completeTask = task.filter(item => item.status === "complete")
 
-  console.log(task);
-
 
   return (
     <div className="h-screen grid grid-cols-12">
