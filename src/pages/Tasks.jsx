@@ -9,9 +9,9 @@ const Tasks = () => {
   let [isOpen, setIsOpen] = useState(false);
   const { task } = useSelector((state) => state.taskSlices);
 
-  const pendingTask = task.filter(item => item.status === "pending")
-  const inProgressTask = task.filter(item => item.status === "in-progress")
-  const completeTask = task.filter(item => item.status === "complete")
+  const pendingTask = task.filter(item => item.status === "pending");
+  const inProgressTask = task.filter(item => item.status === "in-progress");
+  const completeTask = task.filter(item => item.status === "complete");
 
 
   return (

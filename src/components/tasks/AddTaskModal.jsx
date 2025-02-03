@@ -20,7 +20,6 @@ export default function AddTaskModal({ isOpen, setIsOpen }) {
     }
 
     return (
-
         <Modal
             isOpen={isOpen}
             setIsOpen={setIsOpen}

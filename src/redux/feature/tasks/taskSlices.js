@@ -11,27 +11,7 @@ const initialState = {
             date: '2023-08-28',
             assignedTo: 'Mir Hussain',
             priority: 'high',
-        },
-        // {
-        //     id: 1,
-        //     status: 'in-progress',
-        //     title: 'Remove Button',
-        //     description:
-        //         'We need a remove button in our task card. Meke the button red and use Heroicon for tashbin icon.',
-        //     date: '2023-08-28',
-        //     assignedTo: 'Mir Hussain',
-        //     priority: 'high',
-        // },
-        // {
-        //     id: 1,
-        //     status: 'complete',
-        //     title: 'Remove Button',
-        //     description:
-        //         'We need a remove button in our task card. Meke the button red and use Heroicon for tashbin icon.',
-        //     date: '2023-08-28',
-        //     assignedTo: 'Mir Hussain',
-        //     priority: 'high',
-        // }
+        }
     ],
 
     userSpecificTasks: [],
