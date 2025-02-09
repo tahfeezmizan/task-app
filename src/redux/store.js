@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import taskSlices from './feature/tasks/taskSlices';
-import userSlices from './feature/userSlices/userSlices';
+import tasksSlice from './features/tasks/tasksSlice';
+import userSlice from './features/user/userSlice';
 
 const store = configureStore({
-    reducer: {
-        taskSlices,
-        userSlices
-    }
+  reducer: {
+    tasksSlice: tasksSlice,
+    userSlice: userSlice,
+  },
 });
 
 export default store;
